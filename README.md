@@ -206,7 +206,7 @@ flowchart TD
 - 外层粒子数量：$N_\theta$；每个粒子代表一个可能的认知参数；
 - 内层粒子数量：$N_{\tilde h}$；每个粒子代表该参数下的一种可能内部记忆；
 - 权重越高：越能解释观察到的用户行为。
-![[74c9c4ad31a94ee225d6e5372630934a.png|466]]
+![Algorithm 1：嵌套粒子滤波与 T-maze](images/algorithm-1-nested-particle-filter-and-t-maze.png)
 ### 6.2 算法流程
 
 ```text
