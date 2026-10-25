@@ -66,7 +66,7 @@ flowchart LR
 
 ```math
 M=(S,A,T,R,O,\Omega,\gamma)
-```math
+```
 
 | 符号 | 含义 |
 |---|---|
@@ -85,7 +85,7 @@ M=(S,A,T,R,O,\Omega,\gamma)
 ```math
 b_t(s_t)=p(s_t|o_t,a_{t-1},b_{t-1})
 \propto O(o_t|s_t)\sum_{s_{t-1}}T(s_t|s_{t-1},a_{t-1})b_{t-1}(s_{t-1})
-```math
+```
 
 直观解释：智能体把“过去的信念”“行动后的环境变化”和“新观察”结合起来，更新对真实状态的概率判断。
 
@@ -95,7 +95,7 @@ b_t(s_t)=p(s_t|o_t,a_{t-1},b_{t-1})
 
 ```math
 \pi^{*}(a|b)\propto \exp(\tau Q^{*}(b,a))
-```math
+```
 
 - $\pi^{*}$：策略，即在信念 $b$ 下采取行动 $a$ 的概率；
 - $Q^{*}(b,a)$：动作价值函数，表示在 $b$ 下采取 $a$ 的长期预期收益；
@@ -109,7 +109,7 @@ b_t(s_t)=p(s_t|o_t,a_{t-1},b_{t-1})
 
 ```math
 \tilde h_t\sim f_\theta(\tilde h_{t-1},o_t,a_{t-1})
-```math
+```
 
 - $\tilde h_t$：用户在时间 $t$ 的内部记忆状态；
 - $f_\theta$：认知/记忆更新模型；
@@ -124,7 +124,7 @@ CR 用户根据自己的内部记忆而不是完整真实历史计算信念：
 
 ```math
 \tilde b_t=p(s_t|\tilde o_{1:t},\tilde a_{1:t-1})
-```math
+```
 
 这意味着用户形成的是主观信念 $\tilde b_t$，它可能偏离客观世界的信念 $b_t$。
 
@@ -138,13 +138,13 @@ CR 用户的行动策略是：
 \pi^{*}(a|\tilde b;\theta)=
 \frac{\exp(\tau Q^{*}(\tilde b,a;\theta))}
 {\sum_{a'\in A}\exp(\tau Q^{*}(\tilde b,a';\theta))}
-```math
+```
 
 用户根据自己的 $\tilde b$ 选择最有价值的行动，因此从用户视角是理性的；但外部观察者知道真实信念 $b^*$，会发现：
 
 ```math
 Q^{*}(b^{*},a^{CR})<Q^{*}(b^{*},a^{FR})
-```math
+```
 
 即基于偏差信念的行动，在客观世界中可能是次优的。
 
@@ -156,13 +156,13 @@ AI 观察用户的行动—观察历史：
 
 ```math
 h_t=(o_{1:t},a_{1:t-1})
-```math
+```
 
 目标是估计联合后验：
 
 ```math
 p(\tilde h_{t-1},\theta|h_t)
-```math
+```
 
 它同时回答：
 
@@ -177,7 +177,7 @@ p(\tilde h_{t-1},\theta|h_t)
 p(a_{t-1}|\tilde h_{t-1})
 \times p(\tilde h_{t-1}|\tilde h_{t-2},h_{t-1},\theta)
 \times p(\tilde h_{t-2},\theta|h_{t-1})
-```math
+```
 
 三项分别是：
 
@@ -240,13 +240,13 @@ NPF 同时处理：
 
 ```math
 O(|S|^t t!)
-```math
+```
 
 会随时间快速增长。NPF 的计算量约为：
 
 ```math
 O(N_\theta N_{\tilde h}t|S|)
-```math
+```
 
 因此使用有限粒子后可以支持在线/实时推断。
 
