@@ -37,9 +37,9 @@ Extended version: https://www.arxiv.org/abs/2511.12359
 2. 在线识别用户特有的记忆限制？
 3. 区分“需要直接行动建议”和“只需要温和记忆提示”的用户？
 
-![[截屏2026-10-25 14.09.15.png]]
+![研究笔记总结](images/research-notes-summary.png)
 
-![[截屏2026-10-25 14.09.40.png]]
+![研究问题与案例笔记](images/research-notes-case-study.png)
 ### 2.2 核心洞见
 
 ```mermaid
@@ -289,7 +289,7 @@ $$
 ## 8. 推断实验结果
 
 ### 8.1 Figure 3：后验如何收敛
-![[截屏2026-10-25 14.12.00.png|427]]
+![Figure 3：后验分布随时间变化](images/figure-3-posterior-evolution.png)
 实验设置真实参数 $\theta_{true}=0.4$。
 
 - 绿色线：真实值；
@@ -302,7 +302,7 @@ $$
 随着观察从 $t=1$ 增加到 $t=100$，分布从分散逐渐集中到 $0.4$ 附近，说明 AI 逐渐排除不符合行为的参数假设。
 
 ### 8.2 Figure 4：误差收敛
-![[截屏2026-10-25 14.13.10.png|505]]
+![Figure 4：推断误差收敛](images/figure-4-inference-error-convergence.png)
 
 Figure 4 显示 PM Error 和 MAP Estimate Error 随观察步数下降。
 
@@ -407,4 +407,3 @@ AI 考虑：他是不是忘记了刚才的信息？
 ## 16. 原论文文件
 
 - [原始 PDF](<../../../../Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_awjlkm43743o22_17b8/temp/drag/AI research(1).pdf>)
-
